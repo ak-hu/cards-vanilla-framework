@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-3.14.0.min.css" />
+  <title>Posts stylised as cards</title>
+  <style>
+    .p-separator {
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .row {
+      margin-top: 2rem;
+    }
+
+    .p-card--highlighted {
+      position: relative;
+    }
+
+    .p-card--highlighted::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #a87ca0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row" id="root"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
