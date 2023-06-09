@@ -13,13 +13,14 @@ function createCard(post) {
     const card = document.createElement('div');
     card.classList.add('p-card--highlighted');
 
-    const cDiv = document.createElement('div');
-    cDiv.innerHTML = content;
+    const cardCintentDiv = document.createElement('div');
+    cardCintentDiv.innerHTML = content;
 
     // Show or hide the image inside the figure
-    const figure = cDiv.querySelector('figure');
+    const figure = cardCintentDiv.querySelector('figure');
     if (figure !== null) {
         const figureImage = figure.querySelector('img');
+
         figureImage.onerror = function () {
             figure.style.display = 'none';
         };
@@ -54,6 +55,7 @@ function createCard(post) {
 
     const image = document.createElement('img');
     image.src = imageUrl;
+    image.alt = "Post cover image";
 
     const titleElement = document.createElement('h3');
     const titleLink = document.createElement('a');
@@ -81,7 +83,7 @@ function createCard(post) {
     contentDiv.appendChild(separator1);
     contentDiv.appendChild(image);
     contentDiv.appendChild(titleElement);
-    contentDiv.appendChild(cDiv);
+    contentDiv.appendChild(cardCintentDiv);
     contentDiv.appendChild(dateElement);
     contentDiv.appendChild(separator);
     contentDiv.appendChild(typeElement);
@@ -100,6 +102,9 @@ fetch('https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json')
         data.forEach(post => {
             const card = createCard(post);
             root.appendChild(card);
+            setTimeout(() => {
+                card.classList.add('show');
+            }, 100);
         });
     })
     .catch(error => {

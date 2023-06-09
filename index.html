@@ -19,6 +19,16 @@
 
     .p-card--highlighted {
       position: relative;
+      opacity: 0;
+      transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+    }
+
+    .p-card--highlighted:hover {
+      transform: translateY(30px);
+    }
+
+    .col-4.show .p-card--highlighted {
+      opacity: 1;
     }
 
     .p-card--highlighted::after {
