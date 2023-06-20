@@ -1,4 +1,4 @@
-# cards-vanilla-framework
+# Cards
 
 This project is a small web application that fetches posts from WordPress using the WordPress API and presents them in an interactive and visually appealing manner. The posts are displayed as cards with smooth animations for their appearance and hover effects, utilizing the "Vanilla framework" by Canonical to enhance the user interface.
 
